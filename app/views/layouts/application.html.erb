@@ -12,7 +12,7 @@
     <%= image_tag("ajax-loader.gif", :id => "loader",
 	    :style => "float: right; margin: 7px 15px; background-color: #ff0; display: none") %>
     <ul id="menu">
-      <li><%= link_to "Home", :controller => "home" %></li>
+      <li><%= link_to "Home", root_url %></li>
       <li><%= link_to "Estudantes", students_url %></li>
     </ul>
     <div id="contents">
@@ -21,7 +21,7 @@
       <% end %>
       <%= error_messages_for controller.controller_name.singularize %>
 
-      <%= content_tag(:h1, yield(:title)) unless yield(:title).blank? %></h1>
+      <%= content_tag(:h2, yield(:title)) unless yield(:title).blank? %></h1>
 
       <%= yield %>
     </div>
