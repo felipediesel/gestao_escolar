@@ -1,0 +1,51 @@
+<% form_for(@student) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :firstname %><br />
+    <%= f.text_field :firstname %>
+  </p>
+  <p>
+    <%= f.label :lastname %><br />
+    <%= f.text_field :lastname %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :fone %><br />
+    <%= f.text_field :fone %>
+  </p>
+  <p>
+    <%= f.label :birth %><br />
+    <%= f.date_select :birth %>
+  </p>
+  <p>
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.label :district %><br />
+    <%= f.text_field :district %>
+  </p>
+  <p>
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= f.label :state %><br />
+    <%= f.select :state, Student::OPTIONS_FOR_STATE %>
+  </p>
+  <p>
+    <%= f.label :zip %><br />
+    <%= f.text_field :zip %>
+  </p>
+  <p>
+    <%= f.label :comment %><br />
+    <%= f.text_area :comment %>
+  </p>
+  <p>
+    <%= f.submit @student.new_record? ? "Create" : "Update" %>
+  </p>
+<% end %>

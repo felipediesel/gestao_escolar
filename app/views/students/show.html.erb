@@ -1,0 +1,58 @@
+<p>
+  <b>Firstname:</b>
+  <%=h @student.firstname %>
+</p>
+
+<p>
+  <b>Lastname:</b>
+  <%=h @student.lastname %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @student.email %>
+</p>
+
+<p>
+  <b>Fone:</b>
+  <%=h @student.fone %>
+</p>
+
+<p>
+  <b>Birth:</b>
+  <%=h @student.birth %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%=h @student.address %>
+</p>
+
+<p>
+  <b>District:</b>
+  <%=h @student.district %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @student.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%=h @student.state %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%=h @student.zip %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%=h @student.comment %>
+</p>
+
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>
