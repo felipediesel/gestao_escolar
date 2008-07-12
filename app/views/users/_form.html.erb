@@ -1,0 +1,21 @@
+<% form_for(@user) do |f| %>
+  <p>
+    <%= f.label :name, 'Nome' %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :login, 'Login' %><br />
+    <%= f.text_field :login %>
+  </p>
+  <p>
+    <%= f.label :password, 'Senha' %><br />
+    <%= f.password_field :password, :value => '' %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation, 'Confirmação de senha' %><br />
+    <%= f.password_field :password_confirmation, :value => '' %>
+  </p>
+  <p>
+    <%= f.submit @user.new_record? ? "Criar" : "Atualizar" %>
+  </p>
+<% end %>

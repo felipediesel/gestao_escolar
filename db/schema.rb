@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080712185819) do
+ActiveRecord::Schema.define(:version => 20080712215518) do
 
   create_table "students", :force => true do |t|
     t.string   "firstname"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(:version => 20080712185819) do
     t.string   "state"
     t.string   "zip",        :limit => 9
     t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "login"
+    t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

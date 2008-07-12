@@ -1,0 +1,24 @@
+<% title 'Lista de Usuário' %>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Login</th>
+    <th>&nbsp;</th>
+  </tr>
+
+<% for user in @users %>
+  <tr>
+    <td><%=h user.name %></td>
+    <td><%=h user.login %></td>
+    <td>
+      <%= link_to 'Exibir', user %> |
+      <%= link_to 'Alterar', edit_user_path(user) %> |
+      <%= link_to 'Excluir', user, :confirm => 'Você tem certeza?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Novo Usuário', new_user_path %>

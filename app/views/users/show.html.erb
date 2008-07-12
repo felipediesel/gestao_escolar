@@ -1,0 +1,8 @@
+<% title "Usuário: #{@user.name}" %>
+<p>
+  <b>Login:</b>
+  <%=h @user.login %>
+</p>
+
+<%= link_to 'Alterar', edit_user_path(@user) %> |
+<%= link_to 'Voltar', users_path %>
