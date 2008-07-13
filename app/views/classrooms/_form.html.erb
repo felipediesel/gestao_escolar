@@ -1,0 +1,18 @@
+<% form_for([@course, @classroom]) do |f| %>
+  <p>
+    <%= f.label :name, 'Nome' %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :start, 'Início' %><br />
+    <%= f.date_select :start, :order => [:day, :month, :year] %>
+  </p>
+  <p>
+    <%= f.label :end, 'Fim' %><br />
+    <%= f.date_select :end, :order => [:day, :month, :year], :default => 1.month.from_now %>
+  </p>
+  
+  <p>
+    <%= f.submit @classroom.new_record? ? "Criar" : "Atualizar" %>
+  </p>
+<% end %>

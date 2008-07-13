@@ -1,0 +1,15 @@
+<% title "Curso: " + h(@course.name) + " - Turma: " + h(@classroom.name) %>
+
+<p>
+  <b>Início:</b>
+  <%=h @classroom.start.to_s_br %>
+</p>
+
+<p>
+  <b>Fim:</b>
+  <%=h @classroom.end.to_s_br %>
+</p>
+
+
+<%= link_to 'Alterar', edit_course_classroom_path(@course, @classroom) %> |
+<%= link_to 'Voltar', course_classrooms_path %>

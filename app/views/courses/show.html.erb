@@ -18,6 +18,18 @@
   <%=br @course.content %>
 </p>
 
+<% unless @course.classrooms.empty? %>
+  <h2><%= link_to 'Turmas', course_classrooms_path(@course) %>:</h2>
+  <ul>
+    <% @course.classrooms.each do |classroom| %>
+      <li>
+        <%= link_to h(classroom.name), [@course, classroom] %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <%= link_to 'Turmas', course_classrooms_path(@course) %> |
+<% end %>
 
 <%= link_to 'Alterar', edit_course_path(@course) %> |
 <%= link_to 'Voltar', courses_path %>

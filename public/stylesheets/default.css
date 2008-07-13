@@ -28,6 +28,12 @@ a:hover {
   color: #fff;
   background-color: #2B5586;
 }
+#content ul {
+  margin: 5px 0 10px;
+}
+#content li {
+  margin: 0 0 3px 20px;
+}
 /* /Defaults */
 /* Structure */
 #header {

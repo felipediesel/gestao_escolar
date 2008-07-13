@@ -1,0 +1,28 @@
+<% title "Curso: " + h(@course.name) + " - Lista de Turmas"	  %>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Início</th>
+    <th>Fim</th>
+    <th></th>
+  </tr>
+
+<% for classroom in @classrooms %>
+  <tr>
+    <td><%=h classroom.name %></td>
+    <td><%=h classroom.start.to_s_br %></td>
+    <td><%=h classroom.end.to_s_br %></td>
+    <td>
+      <%= link_to 'Exibir', [@course, classroom] %> |
+      <%= link_to 'Alterar', edit_course_classroom_path(@course, classroom) %> |
+      <%= link_to 'Excluir', [@course, classroom], :confirm => 'Você tem certeza?', :method => :delete %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Voltar para o curso', @course %> |
+<%= link_to 'Nova Turma', new_course_classroom_path %>

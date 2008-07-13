@@ -1,8 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :courses
 
+  map.resources :courses do |classrooms|
+    classrooms.resources :classrooms
+  end
+  
   map.resources :instructors
-
   
   map.resources :sessions
 

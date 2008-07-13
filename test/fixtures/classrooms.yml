@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  start: 2008-07-13
+  course: 
+
+two:
+  name: MyString
+  start: 2008-07-13
+  course: 

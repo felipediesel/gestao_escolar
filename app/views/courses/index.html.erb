@@ -13,7 +13,8 @@
     <td><%=h course.name %></td>
     <td><%=h course.instructor.name %></td>
     <td><%=h course.duration.para_dinheiro %></td>
-    <td>
+    <td>      
+      <%= link_to "Turmas", course_classrooms_path(course) %> |
       <%= link_to 'Exibir', course %> |
       <%= link_to 'Alterar', edit_course_path(course) %> |
       <%= link_to 'Excluir', course, :confirm => 'Você tem certeza?', :method => :delete %>

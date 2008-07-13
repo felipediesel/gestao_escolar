@@ -1,0 +1,6 @@
+<% title "Curso: " + h(@course.name) + " - Alterando turma" %>
+
+<%= render :partial => "form" %>
+
+<%= link_to 'Exibir', [@course, @classroom] %> |
+<%= link_to 'Voltar', course_classrooms_path %>
