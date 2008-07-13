@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th class="gravatar">&nbsp;</th>
     <th>Nome</th>    
     <th>Email</th>
     <th>Fone</th>
@@ -10,6 +11,7 @@
   
   <% for student in @students %>
     <tr>
+      <td><%= link_to gravatar(student.email), student %></td>
       <td><%=h student.name %></td>
       <td><%=h student.email %></td>
       <td><%=h student.phone %></td>

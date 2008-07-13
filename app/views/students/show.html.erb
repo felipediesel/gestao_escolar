@@ -1,4 +1,7 @@
 <% title "Estudante: " + h(@student.name) -%>
+
+<p class="show_gravatar"><%= gravatar @student.email, :size => 100 %></p>
+
 <p>
   <b>Email:</b>
   <%=h @student.email %>

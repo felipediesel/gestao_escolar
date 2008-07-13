@@ -13,7 +13,9 @@ body, p, ol, ul, td, th {
   line-height: 1.3em;
   font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
 }
-
+img {
+  border:0;
+}
 p {
   margin: 5px 0 10px;
 }
@@ -29,7 +31,7 @@ a:hover {
 /* /Defaults */
 /* Structure */
 #header {
-  border-top:8px solid #1B3A5E;
+  border-top: 8px solid #1B3A5E;
   padding: 12px 40px 0;
   height: 30px;
   background: #4570A2;
@@ -58,13 +60,15 @@ a:hover {
   font-family: "Trebuchet MS";
   font-size: 25px;
 }
+
 #header h1 a {
-  color:#fff;
-  text-decoration:none;
+  color: #fff;
+  text-decoration: none;
 }
+
 #header h1 a:hover {
-  color:#1B3A5E;
-  background:transparent;
+  color: #1B3A5E;
+  background: transparent;
 }
 
 #nav {
@@ -101,8 +105,9 @@ table {
 }
 
 table th, table td {
-  padding:3px
+  padding: 3px
 }
+
 table th {
   background: #999;
   color: #fff;
@@ -176,3 +181,11 @@ table td {
   list-style: square;
 }
 /* \Error and Messages */
+th.gravatar {
+  width: 50px
+}
+
+.show_gravatar {
+  float: right;
+  margin: -40px 0 0 10px;
+}

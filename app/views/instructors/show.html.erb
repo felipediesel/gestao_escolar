@@ -1,4 +1,7 @@
 <% title "Instrutor: " + h(@instructor.name) -%>
+
+<p class="show_gravatar"><%= gravatar @instructor.email, :size => 100 %></p>
+
 <p>
 <% unless @instructor.linkedin.blank? %>
   <%= link_to "Currículo no LinkedIn", @instructor.linkedin, :rel => "external" %>
