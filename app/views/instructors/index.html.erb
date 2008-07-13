@@ -1,0 +1,27 @@
+<% title "Lista de Instrutors" -%>
+
+<table>
+  <tr>
+    <th>Nome</th>    
+    <th>Email</th>
+    <th>Fone</th>
+    <th>&nbsp;</th>
+  </tr>
+  
+  <% for instructor in @instructors %>
+    <tr>
+      <td><%=h instructor.name %></td>
+      <td><%=h instructor.email %></td>
+      <td><%=h instructor.phone %></td>
+      <td>
+        <%= link_to 'Exibir', instructor %> |
+        <%= link_to 'Alterar', edit_instructor_path(instructor) %> |
+        <%= link_to 'Excluir', instructor, :confirm => 'Você tem certeza?', :method => :delete %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to 'Novo instrutor', new_instructor_path %>

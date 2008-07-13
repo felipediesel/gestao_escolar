@@ -1,0 +1,61 @@
+<% form_for(@instructor) do |f| %>
+  <p>
+    <%= f.label :firstname, 'Primeiro Nome' %><br />
+    <%= f.text_field :firstname %>
+  </p>
+  <p>
+    <%= f.label :lastname, 'Sobrenome' %><br />
+    <%= f.text_field :lastname %>
+  </p>
+  <p>
+    <%= f.label :email, 'Email' %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :phone, 'Fone' %><br />
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.label :birth, 'Nascimento' %><br />
+    <%= f.date_select :birth, :order => [:day, :month, :year], :start_year => 100.year.ago.year, :default => 20.year.ago %>
+  </p>
+  <p>
+    <%= f.label :address, 'Endereço' %><br />
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.label :district, 'Bairro' %><br />
+    <%= f.text_field :district %>
+  </p>
+  <p>
+    <%= f.label :city, 'Cidade' %><br />
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= f.label :state, 'Estado' %><br />
+    <%= f.select :state, Instructor::OPTIONS_FOR_STATE %>
+  </p>
+  <p>
+    <%= f.label :zip, 'CEP' %><br />
+    <%= f.text_field :zip %>
+  </p>
+  <p>
+    <%= f.label :resume, 'Currículo' %><br />
+    <%= f.text_area :resume %>
+  </p>
+  <p>
+    <%= f.label :linkedin, 'Link para currículo n o LinkedIn' %><br />
+    <%= f.text_field :linkedin %>
+  </p>
+  <p>
+    <%= f.label :lattes, 'Link para currículo no Lattes' %><br />
+    <%= f.text_field :lattes %>
+  </p>
+  <p>
+    <%= f.label :comment, 'Observação' %><br />
+    <%= f.text_area :comment %>
+  </p>
+  <p>
+    <%= f.submit @instructor.new_record? ? "Criar" : "Atualizar" %>
+  </p>
+<% end %>

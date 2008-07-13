@@ -1,6 +1,6 @@
-class CreateStudents < ActiveRecord::Migration
+class CreateInstructors < ActiveRecord::Migration
   def self.up
-    create_table :students do |t|
+    create_table :instructors do |t|
       t.string :firstname
       t.string :lastname
       t.string :email
@@ -12,6 +12,8 @@ class CreateStudents < ActiveRecord::Migration
       t.string :state
       t.string :zip, :limit => 9
       t.text :resume
+      t.string :linkedin
+      t.string :lattes
       t.text :comment
 
       t.timestamps
@@ -19,6 +21,6 @@ class CreateStudents < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :students
+    drop_table :instructors
   end
 end

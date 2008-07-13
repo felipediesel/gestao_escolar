@@ -9,7 +9,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080712215518) do
+ActiveRecord::Schema.define(:version => 20080713051914) do
+
+  create_table "instructors", :force => true do |t|
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "email"
+    t.string   "phone"
+    t.date     "birth"
+    t.string   "address"
+    t.string   "district"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip",        :limit => 9
+    t.text     "resume"
+    t.string   "linkedin"
+    t.string   "lattes"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "students", :force => true do |t|
     t.string   "firstname"

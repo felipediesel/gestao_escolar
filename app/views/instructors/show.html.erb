@@ -1,0 +1,48 @@
+<% title "Instrutor: " + h(@instructor.name) -%>
+<p>
+<% unless @instructor.linkedin.blank? %>
+  <%= link_to "Currículo no LinkedIn", @instructor.linkedin, :rel => "external" %>
+<% end %>
+
+<% unless @instructor.lattes.blank? %>
+  <%= link_to "Currículo no Lattes", @instructor.lattes, :rel => "external"  %>
+<% end %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @instructor.email %>
+</p>
+
+<p>
+  <b>Fone:</b>
+  <%=h @instructor.phone %>
+</p>
+
+<p>
+  <b>Nascimento:</b>
+  <%=h @instructor.birth %>
+</p>
+
+<p>
+  <b>Endereço:</b>
+  <%=h(@instructor.address) + '<br />' unless @instructor.address %>
+  <% unless @instructor.district.blank? and @instructor.city.blank? %>
+    B. <%=h @instructor.district %> - <%=h @instructor.city %> / <%=h @instructor.state %><br />
+    <b>CEP:</b>
+    <%=h @instructor.zip %>
+  <% end %>
+</p>
+
+<p>
+  <b>Currículo:</b>
+  <%= br @instructor.resume %>
+</p>
+<p>
+  <b>Observacao:</b>
+  <%= br @instructor.comment %>
+</p>
+
+
+<%= link_to 'Alterar', edit_instructor_path(@instructor) %> |
+<%= link_to 'Voltar', instructors_path %>
