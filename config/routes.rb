@@ -1,4 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
+  
+  map.resources :sessions
+
+  map.with_options(:controller => "sessions") do |sessions|
+    sessions.login "/login", :action => "new"
+    sessions.logout "/logout", :action => "destroy"
+  end
+  
   map.resources :users
 
   map.resources :students

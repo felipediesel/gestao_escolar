@@ -12,4 +12,28 @@ class ApplicationController < ActionController::Base
   # Uncomment this to filter the contents of submitted sensitive data parameters
   # from your application log (in this case, all fields with names like "password"). 
   # filter_parameter_logging :password
+  
+  before_filter :authenticate
+
+  helper_method :current_user 
+
+  protected  
+  def authenticate  
+    if request.format == :rss
+      if user = authenticate_with_http_basic { |u, p| User.find_by_login_and_password(u, p) }
+        session[:user] = user.id
+      else
+        request_http_basic_authentication 'Usuário requerido'
+      end
+    else
+      unless session[:user]
+        session[:return_to] = request.request_uri
+        redirect_to login_path
+      end
+    end    
+  end
+    
+  def current_user 
+    @current_user ||= User.find(session[:user]) if session[:user] 
+  end  
 end

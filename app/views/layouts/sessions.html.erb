@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Gestão Escolar</title>
+    <%= stylesheet_link_tag "login" %>
+  </head>
+  <body>   
+    <div id="contents">
+      <% flash.each do |key, msg| %>
+        <%= content_tag :div, msg, :class => "flash_" + key.to_s %>
+      <% end %>
+      <%= error_messages_for controller.controller_name.singularize %>
+
+      <h1>Gestão Escolar</h1>
+       
+      <%= yield %>
+    </div>
+  </body>
+</html>

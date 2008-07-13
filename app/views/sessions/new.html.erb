@@ -1,0 +1,13 @@
+<% form_tag login_url, :method => :post do %>
+  <p>
+    <%= label_tag :login, 'Usuário' %>
+    <%= text_field_tag :login, params[:login] %>
+  </p>
+  <p>
+    <%= label_tag :password, 'Senha' %>
+    <%= password_field_tag :password, "" %>
+  </p>
+  <p class="submit">
+    <%= submit_tag "Entrar »" %>
+  </p>
+<% end %>
