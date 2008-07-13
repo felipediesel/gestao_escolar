@@ -1,0 +1,23 @@
+<% title "Curso: " + @course.name %>
+<p>
+  <%=br @course.description %>
+</p>
+
+<p>
+  <b>Instructor:</b>
+  <%=h @course.instructor.name %>
+</p>
+
+<p>
+  <b>Duração:</b>
+  <%=h @course.duration %>
+</p>
+
+<p>
+  <b>Conteúdo Programático:</b><br />
+  <%=br @course.content %>
+</p>
+
+
+<%= link_to 'Alterar', edit_course_path(@course) %> |
+<%= link_to 'Voltar', courses_path %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  description: MyText
+  time: 1.5
+  content: MyText
+  instructor: 
+
+two:
+  name: MyString
+  description: MyText
+  time: 1.5
+  content: MyText
+  instructor: 

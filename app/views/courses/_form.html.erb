@@ -1,0 +1,25 @@
+<% form_for(@course) do |f| %>
+  <p>
+    <%= f.label :name, 'Nome' %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description, 'Descrição' %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :duration, 'Carga Horária' %><br />
+    <%= f.text_field :duration %>
+  </p>
+  <p>
+    <%= f.label :content, 'Conteúdo Programático' %><br />
+    <%= f.text_area :content %>
+  </p>
+  <p>
+    <%= f.label :instructor, 'Instrutor' %><br />
+    <%= f.select :instructor_id, @instructors, :prompt => "Selecione..." %>
+  </p>
+  <p>
+    <%= f.submit @course.new_record? ? "Criar" : "Atualizar" %>
+  </p>
+<% end %>
