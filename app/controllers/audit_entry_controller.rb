@@ -1,2 +1,0 @@
-class AuditEntryController < ApplicationController
-end
