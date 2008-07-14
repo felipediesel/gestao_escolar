@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
   def new
     if params[:login]
-      if user = User.find_by_login_and_password(params[:login], params[:password])
+      if user = User.find_by_login_and_password(params[:login], Digest::SHA1.hexdigest(params[:password]))
         session[:user] = user.id
         redirect_to session[:return_to]
       else
