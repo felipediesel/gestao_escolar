@@ -4,7 +4,7 @@ class ClassroomsController < ApplicationController
   # GET /classrooms
   # GET /classrooms.xml
   def index
-    @classrooms = @course.classrooms.find(:all)
+    @classrooms = @course.classrooms.find(:all, :order => 'start')
 
     respond_to do |format|
       format.html # index.html.erb

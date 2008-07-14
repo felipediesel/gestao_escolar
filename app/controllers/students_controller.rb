@@ -2,7 +2,7 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.xml
   def index
-    @students = Student.find(:all)
+    @students = Student.find(:all, :order => 'name')
 
     respond_to do |format|
       format.html # index.html.erb
