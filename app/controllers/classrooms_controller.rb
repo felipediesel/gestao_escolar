@@ -1,5 +1,6 @@
 class ClassroomsController < ApplicationController
   before_filter :load_course
+  before_filter :load_students, :only => [:new, :create, :edit, :update]
   
   # GET /classrooms
   # GET /classrooms.xml
@@ -88,5 +89,8 @@ class ClassroomsController < ApplicationController
   protected
   def load_course
     @course = Course.find(params[:course_id], :include => :classrooms)
+  end
+  def load_students
+    @students = Student.find(:all, :order => "firstname, lastname")
   end
 end

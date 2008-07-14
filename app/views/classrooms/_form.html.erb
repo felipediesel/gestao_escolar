@@ -11,6 +11,18 @@
     <%= f.label :end, 'Fim' %><br />
     <%= f.date_select :end, :order => [:day, :month, :year], :default => 1.month.from_now %>
   </p>
+  <p>
+    <b>Estudantes Matriculados</b>
+    <ul class="checklist">
+      <% @students.each do |student| %>
+        <li>
+          <%= check_box_tag "classroom[student_ids][]", student.id, 
+  					@classroom.students.include?(student), :id => "classroom_student_" + student.id.to_s %>
+          <%= f.label "student_" + student.id.to_s, student.name %>
+        </li>
+      <% end %>
+    </ul>
+  </p>
   
   <p>
     <%= f.submit @classroom.new_record? ? "Criar" : "Atualizar" %>

@@ -9,7 +9,19 @@
   <b>Fim:</b>
   <%=h @classroom.end.to_s_br %>
 </p>
-
-
+<% unless @classroom.students.empty? %>
+  <p>
+    <b>Estudantes Matriculados:</b>
+    <ol>
+      <% @classroom.students.each do |student| %>
+        <li>
+          <%= student.name %>
+        </li>
+      <% end %>
+    </ol>
+  </p>
+<% else %>
+  <p><em>Nenhum estudante foi matriculado</em></p>
+<% end %>
 <%= link_to 'Alterar', edit_course_classroom_path(@course, @classroom) %> |
 <%= link_to 'Voltar', course_classrooms_path %>

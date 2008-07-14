@@ -28,11 +28,18 @@ a:hover {
   color: #fff;
   background-color: #2B5586;
 }
-#content ul {
+#content ul, #content ol {
   margin: 5px 0 10px;
 }
-#content li {
+#content ol li {
+  margin: 0 0 3px 40px;
+}
+#content ul li {  
+  list-style:square;
   margin: 0 0 3px 20px;
+}
+#content ul.checklist li {
+  list-style:none;
 }
 /* /Defaults */
 /* Structure */

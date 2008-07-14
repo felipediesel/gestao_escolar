@@ -32,6 +32,20 @@
   <%= br @student.comment %>
 </p>
 
+<% unless @student.classrooms.empty? %>
+  <p>
+    <b>Cursos Matrículados:</b>
+    <ol>
+      <% @student.classrooms.each do |classroom| %>
+        <li>
+          <%= classroom.course.name %> (Turma: <%= classroom.name %>)
+        </li>
+      <% end %>
+    </ol>
+  </p>
+<% else %>
+  <p><em>O estudante não está matriculado em nenhum curso</em></p>
+<% end %>
 
 <%= link_to 'Alterar', edit_student_path(@student) %> |
 <%= link_to 'Voltar', students_path %>
