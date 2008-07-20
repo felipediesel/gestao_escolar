@@ -1,10 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.resources :courses do |classrooms|
-    classrooms.resources :classrooms
+  map.resources :courses, :as => 'cursos' do |classrooms|
+    classrooms.resources :classrooms, :as => 'turmas'
   end
   
-  map.resources :instructors
+  map.resources :instructors, :as => 'instrutores'
   
   map.resources :sessions
 
@@ -13,9 +13,9 @@ ActionController::Routing::Routes.draw do |map|
     sessions.logout "/logout", :action => "destroy"
   end
   
-  map.resources :users
+  map.resources :users, :as => 'usuarios'
 
-  map.resources :students
+  map.resources :students, :as => 'estudantes'
 
   # The priority is based upon order of creation: first created -> highest priority.
 
