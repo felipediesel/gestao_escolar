@@ -1,0 +1,9 @@
+if @lesson.save 
+  page.insert_html :bottom, "lessons_list", :partial => "index_lesson", 
+    :locals => { :lesson => @lesson }
+  
+  page.visual_effect :highlight, "lesson_#{@lesson.id}", :duration => 2 
+  
+  @lesson = @classroom.lessons.new
+end 
+page.replace "new_lesson", :partial => "form" 

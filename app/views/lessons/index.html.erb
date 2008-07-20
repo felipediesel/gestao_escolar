@@ -1,0 +1,25 @@
+<% title "Curso: " + h(@course.name) + " > Turma: " + h(@classroom.name) + " > Lista de Aulas"  %>
+
+<% content_for :head do %>  
+    <%= javascript_include_tag 'lessons_form' %>
+<% end %>
+
+<table id="lessons_list">
+  <tr>
+    <th>Nome</th>
+    <th>Data</th>
+    <th>Duração</th>
+    <th>&nbsp;</th>
+  </tr>
+  <% for lesson in @lessons %>
+    <%= render :partial => 'index_lesson', :locals => {:lesson => lesson} -%>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nova Aula', '#', :id => "new_lesson_link" %>
+
+<div id="new_lesson" style="display:none">
+  <%= render :partial => "form" %>
+</div>

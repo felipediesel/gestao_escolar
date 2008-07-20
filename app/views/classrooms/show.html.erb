@@ -23,5 +23,22 @@
 <% else %>
   <p><em>Nenhum estudante foi matriculado</em></p>
 <% end %>
+
+<% unless @classroom.lessons.empty? %>
+  <p>
+    <b><%= link_to 'Aulas agendadas:', course_classroom_lessons_path(@course, @classroom) %></b>   
+    <ol>
+      <% @classroom.lessons.each do |lesson| %>
+        <li>
+          <%=h lesson.date.to_s_br %> -  
+          <%=h lesson.name %></td> 
+          (Duração: <%=h lesson.duration.para_dinheiro %> h.)
+        </li>
+      <% end %>
+    </ol>
+  </p>
+<% else %>
+  <p><em>Nenhum aula foi agendada</em></p>
+<% end %>
 <%= link_to 'Alterar', edit_course_classroom_path(@course, @classroom) %> |
 <%= link_to 'Voltar', course_classrooms_path %>

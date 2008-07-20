@@ -1,0 +1,19 @@
+<% remote_form_for([@course, @classroom, @lesson]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name, "Nome" %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :date, "Data" %><br />
+    <%= f.date_select :date, :order => [:day, :month, :year] %>
+  </p>
+  <p>
+    <%= f.label :duration, "Duração" %><br />
+    <%= f.text_field :duration %>
+  </p>
+  <p>
+    <%= f.submit @lesson.new_record? ? "Criar" : "Atualizar" %>
+  </p>
+<% end %>

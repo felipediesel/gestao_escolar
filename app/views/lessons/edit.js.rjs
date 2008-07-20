@@ -1,0 +1,7 @@
+page.replace "lesson_#{@lesson.id}", :partial => "edit_form" 
+page << "
+$('html').animate({
+    scrollTop: $('#lesson_#{@lesson.id}').offset().top
+}, 'fast');
+" 
+page.hide "new_lesson"

@@ -1,0 +1,8 @@
+if @lesson.save 
+  page.replace "lesson_#{@lesson.id}", :partial => "index_lesson", 
+    :locals => { :lesson => @lesson }
+  
+  page.visual_effect :highlight, "lesson_#{@lesson.id}", :duration => 2 
+else 
+  page.replace "lesson_#{@lesson.id}", :partial => "edit_form" 
+end 

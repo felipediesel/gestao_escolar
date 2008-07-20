@@ -1,0 +1,9 @@
+<tr id="lesson_<%= lesson.id %>">
+  <td><%=h lesson.name %></td>
+  <td><%=h lesson.date.to_s_br %></td>
+  <td><%=h lesson.duration.para_dinheiro %></td>
+  <td>
+    <%= link_to_remote 'Alterar', :url => edit_course_classroom_lesson_path(@course, @classroom, lesson) %> |
+    <%= link_to_remote 'Excluir', :url => [@course, @classroom, lesson], :confirm => 'Você tem certeza?', :method => :delete %>
+  </td>
+</tr>

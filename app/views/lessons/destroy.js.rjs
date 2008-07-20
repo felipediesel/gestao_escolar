@@ -1,0 +1,1 @@
+page.visual_effect :fade, "lesson_#{@lesson.id}", :duration => 0.5 

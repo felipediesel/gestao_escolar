@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  date: 2008-07-20
+  duration: 1.5
+  classroom: 
+
+two:
+  name: MyString
+  date: 2008-07-20
+  duration: 1.5
+  classroom: 
