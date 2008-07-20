@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  lesson: 
+  classroom: 
+  presence: false
+
+two:
+  lesson: 
+  classroom: 
+  presence: false

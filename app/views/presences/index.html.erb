@@ -1,0 +1,28 @@
+<% title "Curso: " + h(@course.name) + " > Turma: " + h(@classroom.name) + " > Presenças"  %>
+
+<% form_for([@course, @classroom, @presence]) do |f| %>
+<table>
+  <tr>
+    <th>Aluno</th>
+    <% for lesson in @classroom.lessons %>
+      <th style="text-align:center"><%= lesson.date.strftime("%d/%m") %></th>
+    <% end %>
+  </tr>
+  <% for student in @classroom.students %>
+    <tr>
+      <td><%=h student.name %></td>      
+      <% for lesson in @classroom.lessons %>
+        <td style="text-align:center">
+            <%= check_box_tag "presences[]", lesson.id.to_s + '_' + student.id.to_s,
+							!Presence.find_by_lesson_id_and_student_id(lesson.id, student.id).blank? %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>  
+  <p>
+    <%= f.submit "Gravar" %>
+  </p>
+<% end %>
+
+<%= link_to 'Voltar', course_classrooms_path %>
