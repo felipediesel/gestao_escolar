@@ -1,6 +1,6 @@
 class Student < ActiveRecord::Base
   has_and_belongs_to_many :classrooms, :order => 'start'
-
+  has_many :presences
   
   OPTIONS_FOR_STATE = ['Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará',
     'Distrito Federal', 'Espírito Santo', 'Goiás', 'Maranhão', 'Mato Grosso',

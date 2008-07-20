@@ -40,5 +40,7 @@
 <% else %>
   <p><em>Nenhum aula foi agendada</em></p>
 <% end %>
+
+<%= link_to 'Presenças', course_classroom_presences_path(@course, @classroom) %> |
 <%= link_to 'Alterar', edit_course_classroom_path(@course, @classroom) %> |
 <%= link_to 'Voltar', course_classrooms_path %>

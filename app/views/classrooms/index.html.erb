@@ -14,7 +14,8 @@
     <td><%=h classroom.start.to_s_br %></td>
     <td><%=h classroom.end.to_s_br %></td>
     <td>      
-      <%= link_to 'Aulas', course_classroom_lessons_path(@course, classroom) %> |      
+      <%= link_to 'Aulas', course_classroom_lessons_path(@course, classroom) %> |  
+      <%= link_to 'Presenças', course_classroom_presences_path(@course, classroom) %> |      
       <%= link_to 'Exibir', [@course, classroom] %> |
       <%= link_to 'Alterar', edit_course_classroom_path(@course, classroom) %> |
       <%= link_to 'Excluir', [@course, classroom], :confirm => 'Você tem certeza?', :method => :delete %>

@@ -1,10 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
-#  map.resources :lessons
-
 
   map.resources :courses, :as => 'cursos' do |course|
     course.resources :classrooms, :as => 'turmas' do |classroom|
       classroom.resources :lessons, :as => 'aulas'
+      classroom.resources :presences, :as => 'presencas'
     end
   end
   
