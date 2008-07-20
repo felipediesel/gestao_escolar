@@ -1,0 +1,17 @@
+<% title "Relatórios de Estudantes por Curso" %>
+
+<table>
+  <tr>
+    <th>Curso</th>
+    <th>Estudantes Matrículados</th>
+  </tr>
+  
+<% for course in @courses %>
+  <tr>
+    <td><%=h course.name %></td>
+    <td><%=h course.students_count %></td>
+  </tr>
+<% end %>
+</table>
+  
+<%= link_to "Voltar", :controller => "reports" %>

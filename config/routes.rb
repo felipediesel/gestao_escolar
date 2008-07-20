@@ -7,6 +7,8 @@ ActionController::Routing::Routes.draw do |map|
     end
   end
   
+  map.resources :reports
+  
   map.resources :instructors, :as => 'instrutores'
   
   map.resources :sessions

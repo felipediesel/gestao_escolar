@@ -1,0 +1,8 @@
+<% title "Relatórios" %>
+
+<p>Selectione o relatório:</p>
+
+<ul>
+  <li><%= link_to "Alunos por curso", :controller => "reports", :action => "students_course" %></li>
+  <li><%= link_to "Alunos por turma", :controller => "reports", :action => "students_classroom" %></li>
+</ul>

@@ -13,8 +13,9 @@
         <ul id="nav">
           <li><%= link_to "Home", root_url %></li>
           <li><%= link_to "Estudantes", students_url %></li>
-          <li><%= link_to "Cursos/Turmas", courses_url %></li>
           <li><%= link_to "Instrutores", instructors_url %></li>
+          <li><%= link_to "Cursos/Turmas", courses_url %></li>
+          <li><%= link_to "Relatórios", :controller => 'reports' %></li>
           <li><%= link_to "Usuários", users_url %></li>
           <li><%= link_to "Sair", logout_url %></li>
         </ul>
