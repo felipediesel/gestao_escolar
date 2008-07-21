@@ -1,3 +1,5 @@
+require 'digest/sha1'
+
 class User < ActiveRecord::Base
   validates_presence_of :password, :if => :password_required?
   validates_presence_of :password_confirmation, :if => :password_required?
