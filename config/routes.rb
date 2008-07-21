@@ -7,7 +7,7 @@ ActionController::Routing::Routes.draw do |map|
     end
   end
   
-  map.resources :reports
+  map.resources :reports, :as => 'relatorios'
   
   map.resources :instructors, :as => 'instrutores'
   
